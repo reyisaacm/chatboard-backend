@@ -33,6 +33,9 @@ func hello(c echo.Context) error {
 
 func main() {
 	port := os.Getenv("PORT")
+	if port == "" {
+		port = "1323"
+	}
 
 	e := echo.New()
 	e.Use(middleware.Logger())
